@@ -4,6 +4,18 @@ const port = process.env.PORT || 3001;
 
 app.get("/", (req, res) => res.type('html').send(html));
 
+fetch("https://hook.eu2.make.com/ky7ae7ei7v067ey9dkwmxsi8khx5yter", {
+  method: "POST",
+  body: JSON.stringify({
+    userId: 1,
+    title: "Online Script is Working",
+    completed: false
+  }),
+  headers: {
+    "Content-type": "application/json; charset=UTF-8"
+  }
+});
+
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 server.keepAliveTimeout = 120 * 1000;
